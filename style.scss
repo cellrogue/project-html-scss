@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css?family=Metamorphous:700|Metamorphous:400');
+
+$text: #ffffff;
+$background: #2b1303;
+$primary: #f69c60;
+$secondary: #220f02;
+$accent: #e3630d;
+
+$container-width: 70%;
+
+$mobile: 600px;
+
+// 601px and 768px: Tablets
+$tabletMinWidth: 601px;
+$tabletMaxWidth: 768px;
+
+// 769px and 1024px: Small screens, laptops
+$laptopMinWidth: 769px;
+$laptopMaxWidth: 1024px;
+
+// large screens
+$desktop: 1025px;
+
+body {
+    background-color: $background;
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Metamorphous';
+    font-weight: 400;
+
+    p, a, li, label {
+        color: $text;
+    }
+
+    h1 {
+        color: $primary;
+    }
+
+    h2, h3, h4 {
+        color: $accent;
+    }
+
+    .page-content {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar-nav {
+        position: fixed;
+        height: 100%;
+        z-index: 1;
+
+        @media screen and (max-width: $laptopMaxWidth) {
+            position: initial;
+        }
+
+        
+        .nav {
+            padding: 8px;
+            height: inherit;
+            background-color: $primary;
+        }
+        ul {
+            @media screen and (max-width: $laptopMaxWidth) {
+                display: flex;
+                justify-content: space-around;
+            }
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 4px 0px;
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $text;
+                    &:hover {
+                        animation: hoverA;
+                        animation-duration: 0.5s;
+                        color: $background;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+
+       
+
+        .landing-page-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: $container-width;
+
+            @media (min-width: $laptopMinWidth) and (max-width: $laptopMaxWidth) {
+                width: 60%;
+            }
+
+            .items-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                height: 50%;
+    
+                .item {
+                    background-color: $accent;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid black;
+                    border-radius: 10px;
+                    width: 200px;
+                    height: 400px;
+                    margin: 8px;
+    
+                    .item-image {
+                        border-radius: 20px;
+                    }
+    
+                    .item-content-list {
+                        list-style: none;
+                        padding: 8px;
+    
+                        .item-property {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .good-content {
+            width: $container-width;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            @media (min-width: $laptopMinWidth) and (max-width: $laptopMaxWidth) {
+                width: 60%;
+            }
+
+            @media (max-width: $mobile) {
+                width: 80%;
+            }
+        }
+
+        .request-good-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 900px;
+            background-color: $primary;
+            padding: 8px 16px;
+    
+            @media screen and (max-width: $mobile) {
+                width: 400px;
+            }
+
+            @media (min-width: $laptopMinWidth) and (max-width: $laptopMaxWidth) {
+                width: 500px;
+            }
+    
+            input {
+                margin: 8px 0px;
+                width: 400px;
+                outline: none;
+                padding: 4px;
+                border-radius: 8px;
+                border: 1px solid black;
+    
+                @media screen and (max-width: $mobile) {
+                    width: 390px;
+                }
+            }
+
+            textarea {
+                margin: 8px 0px;
+                border-radius: 8px;
+                border: 1px solid black;
+                outline: none;
+
+                @media screen and (max-width: 600px) {
+                    width: 200px;
+                }
+            }
+    
+            select {
+                margin: 8px 0px;
+                width: 400px;
+                outline: none;
+                border-radius: 8px;
+                padding: 4px;
+                border: 1px solid black;
+            }
+
+            button {
+                width: 100px;
+                border: 1px solid black;
+                padding: 4px 8px;
+                outline: none;
+                border-radius: 10px;
+                &:hover {
+                    background-color: $accent;
+                    cursor: pointer;
+                }
+            }
+    
+            .picture-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                width: 400px;
+
+                .choose-file-btn {
+                    width: 80px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $accent;
+                    }
+                }
+            }
+        }
+
+        .good-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            img {
+                width: 250px;
+                height: 300px;
+                border-radius: 20px;
+                padding: 8px;
+                transition: transform .2s;
+                cursor: pointer;
+                &:hover {
+                    margin: 0px 12px;
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .image {
+            width: 600px;
+            height: 200px;
+            border-radius: 20px;
+
+            @media (min-width: $desktop) {
+                width: 600px;
+                height: 200px;
+            }
+
+            @media (max-width: $mobile) {
+                width: 400px;
+                height: 200px;
+            }
+        }
+
+        
+
+        .about-us-content {
+            width: $container-width;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            @media (max-width: $mobile) {
+                width: 80%;
+            }
+
+            @media (min-width: $desktop) {
+                width: 60%;
+            }
+        }
+
+        .contact-info-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+
+            .img-ceo {
+                border-radius: 10px;
+                height: 250px;
+                width: 250px;
+
+                @media (max-width: $mobile) {
+                    width: 370px;
+                    height: 270px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        &:hover {
+                            color: lightblue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .crew-img {
+            border-radius: 10px;
+            height: 300px;
+            width: 450px;
+
+            @media (max-width: $mobile) {
+                width: 370px;
+                height: 270px;
+            }
+        }
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        background-color: $secondary;
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        p {
+            margin-right: 20px;
+        }
+    }
+}
+
+// Animation when hovering a link in nav
+@keyframes hoverA {
+    0% {
+        color: $text;
+    }
+    100% {
+        color: $background;
+    }
+}
+
+@keyframes hoverImg {
+    from {
+        width: 250px;
+        height: 300px;
+    }
+
+    to {
+        width: 270px;
+        height: 320px;
+    }
+}

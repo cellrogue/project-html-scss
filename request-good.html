@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request good</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar-nav">
+        <nav class="nav">
+            <ul class="nav-list-container">
+                <li><a href="landing-page.html">Home</a></li>
+                <li><a href="all-goods.html">All goods</a></li>
+                <li><a href="request-good.html">Request good</a></li>
+                <li><a href="about-us.html">About us</a></li>
+             </ul>
+         </nav>
+     </aside>
+    <main class="main-content">
+        <header>
+            <h1>Fenrir's Goods 🐺</h1>
+        </header>
+        <section class="request-good-content">
+            <h2>Request good</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Please write name here 😎" />
+                
+                <label for="price">Price</label>
+                <input type="text" name="price" placeholder="Name your price 💸" />
+                
+                <label for="desc">Description</label>
+                <input type="text" name="desc" placeholder="Describe good here" />
+                
+                <label for="usage">Usage</label>
+                <input type="text" name="usage" placeholder="Describe usage here" />
+                
+                <label for="pictures">Pictures:</label>
+                <div class="picture-container">
+                    <input type="file" id="selectedFile1" name="pictures" style="display: none;"/>
+                    <input type="button" class="choose-file-btn" value="Choose file" onclick="document.querySelector('#selectedFile1').click();" />
+                    
+                    <input type="file" id="selectedFile2" name="pictures" style="display: none;" />
+                    <input type="button" class="choose-file-btn" value="Choose file" onclick="document.querySelector('#selectedFile2').click();" />
+
+                    <input type="file" id="selectedFile3" name="pictures" style="display: none;" />
+                    <input type="button" class="choose-file-btn" value="Choose file" onclick="document.querySelector('#selectedFile3').click();" />
+
+                    <input type="file" id="selectedFile4" name="pictures" style="display: none;" />
+                    <input type="button" class="choose-file-btn" value="Choose file" onclick="document.querySelector('#selectedFile4').click();" />
+
+                </div>
+                <label>Category:</label>
+                <select>
+                    <option value="rareItem">Rare Item</option>
+                    <option value="potion">Potion</option>
+                    <option value="armor">Armor</option>
+                    <option value="weapons">Weapons</option>
+                    <option value="beverage">Beverage</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Made with HTML and SCSS by Ella</p>
+    </footer>
+</body>
+</html>
